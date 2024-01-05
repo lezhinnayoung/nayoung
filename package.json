@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {"test": "jest--testTimeout=120000"},
   "keywords": [],
   "author": "",
   "license": "ISC",
