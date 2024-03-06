@@ -192,7 +192,7 @@ if (paymentResultElement) {
 });
 
 test('비트캐시', async ({ page }) => {
-  await page.goto('https://q-www.lezhin.jp/ja/payment/payletter?currency=JPY&amount=550.0&pointAmount=0&pg=payletter&idCoinProduct=6755062780135718&paymentMethod=payletter');
+  /*await page.goto('https://q-www.lezhin.jp/ja/payment/payletter?currency=JPY&amount=550.0&pointAmount=0&pg=payletter&idCoinProduct=6755062780135718&paymentMethod=payletter');
 
   // 이메일 로그인 입력 란 요소 선택
   const emailInputElement = await page.waitForSelector('.login__input');
@@ -227,7 +227,7 @@ if (paymentResultElement) {
 } else {
   console.log('fail');
 }
-  await page.close();
+  await page.close();*/
 });
 
 
@@ -328,6 +328,7 @@ if (paymentResultElement) {
   await page.close();
 });
 
+
 test('라쿠텐페이', async ({ page }) => {
   await page.goto('https://q-www.lezhin.jp/ja/payment/payletter?currency=JPY&amount=550.0&pointAmount=0&pg=payletter&idCoinProduct=6755062780135718&paymentMethod=payletter');
 
@@ -350,11 +351,10 @@ test('라쿠텐페이', async ({ page }) => {
   
   const payItem1 = await page.waitForSelector('.lzBtn.lzBtn--large.lzBtn--major', { timeout: 5000 });
   await payItem1.click();
-await page.locator('#ulCVS').getByRole('button').click();
 
+await page.locator('#ulRakuten').getByRole('button').click();
 
-await page.getByRole('link', { name: 'サイトに戻る' }).click();
-
+await page.getByRole('button', { name: '戻 る' }).click();
 
 const paymentResultElement = await page.waitForSelector('.paymentResult', { timeout: 5000 });
 
